@@ -8,6 +8,7 @@ import VirtualTourSection from './VirtualTourSection';
 import ContactFormSection from './ContactFormSection';
 import FooterSection from './FooterSection';
 import WhatsAppButton from './WhatsAppButton';
+import PhoneButton from './PhoneButton';
 import { PropertyData } from '../../App';
 
 interface LandingPageProps {
@@ -26,6 +27,7 @@ const LandingPage: React.FC<LandingPageProps> = ({ propertyData }) => {
       <BrochureDownload brochureDownload={propertyData.brochureDownload} />
       <FooterSection contact={propertyData.contact} />
       <WhatsAppButton whatsappNumber={propertyData.contact.whatsappNumber} />
+      <PhoneButton phoneNumber={propertyData.contact.phone} />
     </div>
   );
 };
