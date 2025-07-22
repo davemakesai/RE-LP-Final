@@ -65,7 +65,7 @@ const AmenitiesSection: React.FC<AmenitiesSectionProps> = ({ amenities }) => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           {/* Section Title */}
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-12 lg:mb-16">
+          <h2 className="text-[48px] lg:text-[48px] font-bold text-center text-gray-900 mb-12 lg:mb-16">
             {amenities.title}
           </h2>
 
