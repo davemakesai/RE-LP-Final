@@ -19,9 +19,9 @@ const LandingPage: React.FC<LandingPageProps> = ({ propertyData }) => {
     <div className="min-h-screen relative">
       <HeroSection hero={propertyData.hero} />
       <ContactFormSection contactForm={propertyData.contactForm} />
+      <GallerySection gallery={propertyData.gallery} />
       <FloorPlansSection floorPlans={propertyData.floorPlans} />
       <AmenitiesSection amenities={propertyData.amenities} />
-      <GallerySection gallery={propertyData.gallery} />
       <VirtualTourSection virtualTour={propertyData.virtualTour} />
       <BrochureDownload brochureDownload={propertyData.brochureDownload} />
       <FooterSection contact={propertyData.contact} />
