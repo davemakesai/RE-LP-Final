@@ -58,9 +58,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({ hero }) => {
               >
                 <Phone className="w-5 h-5 group-hover:animate-bounce-gentle transition-transform duration-300" />
                 <span className="text-lg">Call Now</span>
-                <span className="hidden sm:inline text-blue-100 ml-2">
-                  {formatPhoneDisplay(hero.phoneNumber)}
-                </span>
               </a>
             </div>
           </AnimatedSection>

@@ -116,13 +116,6 @@ const FooterSection: React.FC<FooterSectionProps> = ({ contact }) => {
         </AnimatedSection>
 
         {/* Bottom Section */}
-        <AnimatedSection delay={400}>
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-            <p className="text-gray-400 transition-colors duration-300 hover:text-gray-300">
-              © 2024 Radhe Apartments. All rights reserved.
-            </p>
-          </div>
-        </AnimatedSection>
       </div>
     </footer>
   );
