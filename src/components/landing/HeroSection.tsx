@@ -37,7 +37,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ hero }) => {
       {/* Left Content */}
       <AnimatedSection animation="slide-in-left" className="flex-1 max-w-2xl">
         <AnimatedSection animation="fade-in-down" delay={200}>
-          <h1 className="text-[72px] lg:text-[72px] font-bold text-white mb-6 leading-tight">
+          <h1 className="text-[68px] lg:text-[68px] font-bold text-white mb-6 leading-tight">
             {hero.title}
           </h1>
         </AnimatedSection>
