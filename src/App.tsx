@@ -8,6 +8,7 @@ export interface PropertyData {
     title: string;
     subtitle: string;
     backgroundImage: string;
+    phoneNumber: string;
   };
   overview: {
     title: string;
@@ -76,7 +77,8 @@ const defaultPropertyData: PropertyData = {
   hero: {
     title: "Radhe Apartments",
     subtitle: "Luxury 3 BHK Apartments in the heart of Ahmedabad",
-    backgroundImage: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
+    backgroundImage: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop",
+    phoneNumber: "9876543210"
   },
   overview: {
     title: "Property Overview",

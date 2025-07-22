@@ -1,4 +1,5 @@
 import React from 'react';
+import { Phone } from 'lucide-react';
 import AnimatedSection from '../ui/AnimatedSection';
 
 interface HeroSectionProps {
@@ -6,10 +7,23 @@ interface HeroSectionProps {
     title: string;
     subtitle: string;
     backgroundImage: string;
+    phoneNumber: string;
   };
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ hero }) => {
+  const formatPhoneForTel = (phone: string): string => {
+    return phone.replace(/\D/g, '');
+  };
+
+  const formatPhoneDisplay = (phone: string): string => {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length === 10) {
+      return `+91 ${cleaned.slice(0, 5)} ${cleaned.slice(5)}`;
+    }
+    return phone;
+  };
+
   return (
     <section 
       className="relative h-screen flex items-center justify-between px-8 lg:px-16"
@@ -32,6 +46,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({ hero }) => {
             {hero.subtitle}
           </p>
         </AnimatedSection>
+        
+        {/* Call Now CTA Button */}
+        {hero.phoneNumber && (
+          <AnimatedSection animation="fade-in-up" delay={600}>
+            <div className="mt-8">
+              <a
+                href={`tel:+91${formatPhoneForTel(hero.phoneNumber)}`}
+                className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl group"
+                aria-label={`Call ${formatPhoneDisplay(hero.phoneNumber)}`}
+              >
+                <Phone className="w-5 h-5 group-hover:animate-bounce-gentle transition-transform duration-300" />
+                <span className="text-lg">Call Now</span>
+                <span className="hidden sm:inline text-blue-100 ml-2">
+                  {formatPhoneDisplay(hero.phoneNumber)}
+                </span>
+              </a>
+            </div>
+          </AnimatedSection>
+        )}
       </AnimatedSection>
 
       {/* Right Placeholder Area */}
