@@ -4,6 +4,7 @@ import { Plus, Trash2, Mail } from 'lucide-react';
 interface ContactFormEditorProps {
   contactForm: {
     title: string;
+    propertyImage: string;
     propertyOptions: string[];
     budgetRanges: string[];
     recipientEmail: string;
@@ -18,6 +19,10 @@ const ContactFormEditor: React.FC<ContactFormEditorProps> = ({ contactForm, onCh
 
   const handleEmailChange = (recipientEmail: string) => {
     onChange({ ...contactForm, recipientEmail });
+  };
+
+  const handlePropertyImageChange = (propertyImage: string) => {
+    onChange({ ...contactForm, propertyImage });
   };
 
   const handlePropertyOptionChange = (index: number, value: string) => {
@@ -92,6 +97,24 @@ const ContactFormEditor: React.FC<ContactFormEditorProps> = ({ contactForm, onCh
             />
             <p className="text-sm text-gray-500 mt-1">
               This email will receive form submissions via FormSubmit.co
+            </p>
+          </div>
+
+          {/* Property Image */}
+          <div>
+            <label htmlFor="propertyImage" className="block text-sm font-medium text-gray-700 mb-2">
+              Property Image
+            </label>
+            <input
+              type="url"
+              id="propertyImage"
+              value={contactForm.propertyImage}
+              onChange={(e) => handlePropertyImageChange(e.target.value)}
+              placeholder="https://example.com/property-image.jpg"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <p className="text-sm text-gray-500 mt-1">
+              Image will display in the left column on desktop screens
             </p>
           </div>
 
@@ -171,6 +194,23 @@ const ContactFormEditor: React.FC<ContactFormEditorProps> = ({ contactForm, onCh
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-xl font-bold text-gray-900 mb-4">{contactForm.title}</h4>
+                
+                {/* Property Image Preview */}
+                {contactForm.propertyImage && (
+                  <div className="mt-4 mb-4">
+                    <div className="bg-gray-100 rounded-lg overflow-hidden aspect-video">
+                      <img 
+                        src={contactForm.propertyImage} 
+                        alt="Property preview"
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <p className="text-xs text-gray-500 mt-1">Property Image Preview</p>
+                  </div>
+                )}
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">
                 <div className="space-y-4">

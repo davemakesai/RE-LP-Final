@@ -52,6 +52,7 @@ export interface PropertyData {
   };
   contactForm: {
     title: string;
+    propertyImage: string;
     propertyOptions: string[];
     budgetRanges: string[];
     recipientEmail: string;
@@ -191,6 +192,7 @@ const defaultPropertyData: PropertyData = {
   },
   contactForm: {
     title: "Inquire About This Beautiful Property",
+    propertyImage: "https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
     propertyOptions: ["Luxury Villa", "Modern Apartment", "Family House"],
     budgetRanges: ["Under ₹50L", "₹50L - ₹1Cr", "₹1Cr - ₹2Cr", "Above ₹2Cr"],
     recipientEmail: "devmerchant2003@gmail.com"

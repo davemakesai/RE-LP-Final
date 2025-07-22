@@ -5,6 +5,7 @@ import AnimatedSection from '../ui/AnimatedSection';
 interface ContactFormSectionProps {
   contactForm: {
     title: string;
+    propertyImage: string;
     propertyOptions: string[];
     budgetRanges: string[];
     recipientEmail: string;
@@ -94,6 +95,33 @@ const ContactFormSection: React.FC<ContactFormSectionProps> = ({ contactForm }) 
               <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 {contactForm.title}
               </h2>
+              
+              {/* Property Image - Desktop Only */}
+              {contactForm.propertyImage && (
+                <div className="mt-8 hidden lg:block">
+                  <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]">
+                    <img
+                      src={contactForm.propertyImage}
+                      alt="Property showcase"
+                      className="w-full h-64 xl:h-80 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              )}
+              
+              {/* Property Image - Mobile Only */}
+              {contactForm.propertyImage && (
+                <div className="mt-6 lg:hidden">
+                  <div className="relative overflow-hidden rounded-xl shadow-md">
+                    <img
+                      src={contactForm.propertyImage}
+                      alt="Property showcase"
+                      className="w-full h-48 object-cover"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </AnimatedSection>
 
