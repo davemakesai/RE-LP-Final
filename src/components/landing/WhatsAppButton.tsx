@@ -39,7 +39,7 @@ const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ whatsappNumber }) => {
       </svg>
 
       {/* Pulse Animation */}
-      <div className="absolute inset-0 rounded-full bg-green-500 animate-pulse-gentle opacity-30"></div>
+
     </button>
   );
 };
