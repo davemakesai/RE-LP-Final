@@ -26,7 +26,7 @@ const PhoneButton: React.FC<PhoneButtonProps> = ({ phoneNumber }) => {
       <Phone className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
 
       {/* Pulse Animation */}
-      <div className="absolute inset-0 rounded-full bg-blue-500 animate-pulse-gentle opacity-30"></div>
+
     </button>
   );
 };
